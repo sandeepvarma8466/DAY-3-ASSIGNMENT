@@ -6,21 +6,29 @@ public class EmployeeWageComputation {
     static final int empRatePerHr = 20;
 
     public static void main(String[] args) {
-        System.out.println(" Check isPartTime/FullTime Using Switch Case");
-        int empHrs = 0, empWage;
+        System.out.println("Calculate Wages for a month");
+        int isFullTime = 1;
+        int empRatePerHr = 20;
+        int isPartTime = 0;
+        int empHr = 0;
+        int empWage = 0;
+        int totalEmpWage = 0;
 
-        int empCheck = (int) (Math.random() * 10) % 3;
-        switch (empCheck) {
-            case isFullTime:
-                empHrs = 8;
-                break;
-            case isPartTime:
-                empHrs = 4;
-                break;
-            default:
-                System.out.println("Employee is absent");
+        for (int day=1; day<=20; day++) {
+            int empCheck = (int) (Math.random() * 10) % 3;
+
+            if (empCheck == isFullTime) {
+                empHr = 8;
+            }
+            else if (empCheck == isPartTime) {
+                empHr = 4;
+            }
+            else {
+                empHr = 0;
+            }
+            empWage = empHr * empRatePerHr;
+            totalEmpWage = totalEmpWage + empWage;
         }
-        empWage = empHrs * empRatePerHr;
-        System.out.println("Employee wage : "+empWage);
+        System.out.println("Employee wage for month : "+totalEmpWage);
     }
 }
