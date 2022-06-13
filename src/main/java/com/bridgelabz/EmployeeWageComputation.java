@@ -2,17 +2,23 @@ package com.bridgelabz;
 
 public class EmployeeWageComputation {
     public static void main(String[] args) {
-        System.out.println("Calculate Daily Employee Wage");
-        int isPresent = 1, empHrs = 8, empWage, empRatePerHr = 20;
-        int empCheck = (int) (Math.random() * 10) % 2;
+        System.out.println(" Check isPartTime/FullTime & Calculate Daily Employee Wage");
+        int isFullTime = 1;
+        int isPartTime = 0;
+        int empHrs, empWage, empRatePerHr = 20;
 
-        if (empCheck == isPresent) {
-            System.out.println("Employee is Present");
-            empWage = empHrs * empRatePerHr;
-            System.out.println(empWage);
+        int empCheck = (int) (Math.random() * 10) % 3;
+
+        if (empCheck == isFullTime) {
+            empHrs = 8;
+        }
+        else if (empCheck == isPartTime) {
+            empHrs = 4;
         }
         else {
-            System.out.println("Employee is Absent");
+            empHrs = 0;
         }
+        empWage = empHrs * empRatePerHr;
+        System.out.println("Employee wage : "+empWage);
     }
 }
