@@ -8,11 +8,11 @@ public class EmployeeWageCon {
 }
 
 class Employee {
-    static final int isFullTime = 1;
-    static final int isPartTime = 0;
-    static int dayPresent = 0;
-    static int totalHrs = 0;
-    static int monthlyWage = 0;
+    int isFullTime = 1;
+    int isPartTime = 0;
+    int dayPresent = 0;
+    int totalHrs = 0;
+    int monthlyWage = 0;
 
     void method1() {
         int empHrs;

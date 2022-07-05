@@ -3,9 +3,11 @@ package com.bridgelabz.oops.EmpWage;
 public class EmployeeWageForCompanies {
     static final int isFullTime = 1;
     static final int isPartTime = 0;
-    int workingDays, wagePerHr, workingHrsPerMonth;
+    private int workingDays, wagePerHr, workingHrsPerMonth;
+    private String company;
 
-    public EmployeeWageForCompanies(int workingDays, int wagePerHr, int workingHrsPerMonth) {
+    public EmployeeWageForCompanies(String company, int workingDays, int wagePerHr, int workingHrsPerMonth) {
+        this.company = company;
         this.workingDays = workingDays;
         this.wagePerHr = wagePerHr;
         this.workingHrsPerMonth = workingHrsPerMonth;
@@ -29,8 +31,8 @@ public class EmployeeWageForCompanies {
     }
 
     public static void main(String[] args) {
-        EmployeeWageForCompanies dmart = new EmployeeWageForCompanies(30,6,150);
-        EmployeeWageForCompanies reliance = new EmployeeWageForCompanies(20,6,180);
+        EmployeeWageForCompanies dmart = new EmployeeWageForCompanies("Dmart",30,6,150);
+        EmployeeWageForCompanies reliance = new EmployeeWageForCompanies("Reliance",20,6,180);
         System.out.println("Employee wage for Dmart is : " +dmart.companyWage());
         System.out.println("Employee wage for Reliance is : " +reliance.companyWage());
     }
